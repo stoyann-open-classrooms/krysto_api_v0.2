@@ -1,23 +1,19 @@
 // import controllers review, products
 const trocController = require("../controllers/trocController.js");
 
+const userController = require("../controllers/userController");
 // router
 const router = require("express").Router();
 
+// get product Reviews
+// router.get("/getProductReviews/:id", productController.getProductReviews);
+
 // use routers
-router.post("/addTroc", trocController.upload, trocController.addTroc);
+router.post("/addTroc/", trocController.upload, trocController.addTroc);
 
 router.get("/alltrocs", trocController.getAllTrocs);
 
 router.get("/published", trocController.getPublishedTrocs);
-
-// // Review Url and Controller
-
-// router.get('/allReviews', reviewController.getAllReviews)
-// router.post('/addReview/:id', reviewController.addReview)
-
-// get product Reviews
-// router.get('/getProductReviews/:id', productController.getProductReviews)
 
 // Products router
 router.get("/:id", trocController.getOneTroc);

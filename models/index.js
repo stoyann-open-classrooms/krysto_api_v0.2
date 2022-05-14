@@ -28,6 +28,7 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+///====================== synchronisation des models
 
 db.products = require("./productModel.js")(sequelize, DataTypes);
 db.reviews = require("./reviewModel.js")(sequelize, DataTypes);
@@ -92,6 +93,16 @@ db.products.hasMany(db.reviews, {
 db.reviews.belongsTo(db.products, {
   foreignKey: "product_id",
   as: "product",
+});
+
+// 1 to Many Relation
+db.users.hasMany(db.trocs, {
+  foreignKey: "author_id",
+  as: "troc",
+});
+db.trocs.belongsTo(db.users, {
+  foreignKey: "author_id",
+  as: "user",
 });
 
 module.exports = db;

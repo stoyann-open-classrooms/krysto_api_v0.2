@@ -13,11 +13,15 @@ router.get("/allusers", userController.getAllUsers);
 // Review Url and Controller
 
 router.get("/allUsers", userController.getAllUsers);
-router.post("/addUsers/:id", userController.addUser);
+// router.post("/addUsers/:id", userController.addUser);
 
-// // get product Reviews
-// router.get("/getUserTrocs/:id", userController.getUserTrocs);
+// Review Url and Controller
 
+router.get("/allTrocs", trocController.getAllTrocs);
+router.post("/addTroc/:id", trocController.addTroc);
+
+// get product Reviews
+router.get("/getUserTrocs/:id", trocController.getUserTrocs);
 // Products router
 router.get("/:id", userController.getOneUser);
 

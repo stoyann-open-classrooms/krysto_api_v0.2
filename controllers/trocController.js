@@ -12,8 +12,11 @@ const Troc = db.trocs;
 // 1. create product
 
 const addTroc = async (req, res) => {
+  const id = req.params.id;
+  console.log(id);
   let info = {
     image: req.file.path,
+    author_id: id,
     title: req.body.title,
     price: req.body.price,
     description: req.body.description,
@@ -59,6 +62,23 @@ const deleteTroc = async (req, res) => {
 
   res.status(200).send("Troc is deleted !");
 };
+// 7. connect one to many relation User and Troc
+
+const getUserTrocs = async (req, res) => {
+  const id = req.params.id;
+
+  const data = await Troc.findAll({
+    include: [
+      {
+        model: User,
+        as: "user",
+      },
+    ],
+    where: { author_id: id },
+  });
+
+  res.status(200).send(data);
+};
 
 // 6. get published product
 
@@ -67,24 +87,6 @@ const getPublishedTrocs = async (req, res) => {
 
   res.status(200).send(trocs);
 };
-
-// 7. connect one to many relation Product and Reviews
-
-// const getProductReviews = async (req, res) => {
-//   const id = req.params.id;
-
-//   const data = await Product.findOne({
-//     include: [
-//       {
-//         model: Review,
-//         as: "review",
-//       },
-//     ],
-//     where: { id: id },
-//   });
-
-//   res.status(200).send(data);
-// };
 
 // 8. Upload Image Controller
 
@@ -119,5 +121,6 @@ module.exports = {
   updateTroc,
   deleteTroc,
   getPublishedTrocs,
+  getUserTrocs,
   upload,
 };

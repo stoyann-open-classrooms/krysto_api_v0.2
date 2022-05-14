@@ -26,7 +26,7 @@ const addPlasticType = async (req, res) => {
 
 const getAllPlasticTypes = async (req, res) => {
   const plasticTypes = await PlasticType.findAll({});
-  res.status(200).send(plasticType);
+  res.status(200).send(plasticTypes);
 };
 
 // 8. Upload Image Controller
