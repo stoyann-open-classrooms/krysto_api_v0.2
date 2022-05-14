@@ -1,5 +1,5 @@
 const db = require("../models");
-
+const bcrypt = require("bcrypt");
 // image Upload
 const multer = require("multer");
 const path = require("path");
@@ -13,15 +13,20 @@ const Troc = db.trocs;
 
 const addUser = async (req, res) => {
   let info = {
-    // image: req.file.path,
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
   };
 
-  const user = await User.create(info);
-  res.status(200).send(user);
-  console.log(user);
+  //  hashage du mot de passe
+  await bcrypt.hash(req.body.password, 10).then((hash) => {
+    info.password = hash;
+
+    // Création  de l'uttilisateur
+    const user = User.create(info);
+    res.status(200).send(user);
+    console.log(info);
+  });
 };
 
 // 2. get all trocs
