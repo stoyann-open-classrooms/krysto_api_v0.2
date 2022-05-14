@@ -16,6 +16,8 @@ const trocRouter = require("./routes/trocRouter.js");
 app.use("/api/trocs", trocRouter);
 const userRouter = require("./routes/userRouter.js");
 app.use("/api/users", userRouter);
+const authRouter = require("./routes/authRouter.js");
+app.use("/api/auth", authRouter);
 
 //static Images Folder
 

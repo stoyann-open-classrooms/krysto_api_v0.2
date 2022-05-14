@@ -6,7 +6,7 @@ const path = require("path");
 
 // create main Model
 const User = db.users;
-const Troc = db.trocs;
+
 // main work
 
 // 1. create product
@@ -66,22 +66,6 @@ const deleteUser = async (req, res) => {
 
 // 7. connect one to many relation User and Troc
 
-const getUserTrocs = async (req, res) => {
-  const id = req.params.id;
-
-  const data = await User.findOne({
-    include: [
-      {
-        model: Troc,
-        as: "troc",
-      },
-    ],
-    where: { id: id },
-  });
-
-  res.status(200).send(data);
-};
-
 // 8. Upload Image Controller
 
 const storage = multer.diskStorage({
@@ -114,6 +98,5 @@ module.exports = {
   getOneUser,
   updateUser,
   deleteUser,
-  getUserTrocs,
   upload,
 };

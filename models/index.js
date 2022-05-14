@@ -41,6 +41,7 @@ db.sequelize.sync({ force: false }).then(() => {
   console.log("yes re-sync done!");
 });
 
+// ================ todo = mise en place des relations
 // 1 to Many Relation
 
 db.products.hasMany(db.reviews, {

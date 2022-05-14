@@ -13,7 +13,7 @@ const Troc = db.trocs;
 
 const addTroc = async (req, res) => {
   let info = {
-    // image: req.file.path,
+    image: req.file.path,
     title: req.body.title,
     price: req.body.price,
     description: req.body.description,
