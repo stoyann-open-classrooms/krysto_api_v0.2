@@ -22,7 +22,7 @@ app.use("/api/users", userRouter);
 app.use("/Images", express.static("./Images"));
 
 //port
-const port = 6000;
+const port = 8000;
 
 //server
 
