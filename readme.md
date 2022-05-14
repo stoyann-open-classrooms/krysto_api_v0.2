@@ -1,5 +1,7 @@
 # Krysto api
 
+## ![Logo de krysto](/Images/logo_krysto.png
+
 ================ FR ====================
 
 ## Comment lancer l'API en local:
