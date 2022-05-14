@@ -1,11 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
-  const Troc = sequelize.define("troc", {
+  const SuperTroc = sequelize.define("superTroc", {
     id: {
       type: DataTypes.INTEGER(10),
       primaryKey: true,
       autoIncrement: true,
     },
-    author_id: {
+
+    partenaire_id: {
       type: DataTypes.INTEGER(10),
     },
 
@@ -31,5 +32,5 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
     },
   });
-  return Troc;
+  return SuperTroc;
 };

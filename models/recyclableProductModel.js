@@ -1,26 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
-  const Association = sequelize.define("association", {
+  const RecyclableProduct = sequelize.define("recyclable_product", {
     id: {
       type: DataTypes.INTEGER(10),
       primaryKey: true,
       autoIncrement: true,
     },
-    image: {
-      type: DataTypes.STRING,
-    },
     name: {
       type: DataTypes.STRING,
     },
     description: {
-      type: DataTypes.INTEGER,
-    },
-    website: {
       type: DataTypes.STRING,
     },
-    facebook: {
-      type: DataTypes.STRING,
+    marque_id: {
+      type: DataTypes.INTEGER(10),
     },
   });
 
-  return Association;
+  return RecyclableProduct;
 };

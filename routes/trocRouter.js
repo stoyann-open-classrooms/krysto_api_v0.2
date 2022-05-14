@@ -1,6 +1,5 @@
 // import controllers review, products
 const trocController = require("../controllers/trocController.js");
-const reviewController = require("../controllers/reviewController");
 
 // router
 const router = require("express").Router();

@@ -13,6 +13,7 @@ const User = db.users;
 
 const addUser = async (req, res) => {
   let info = {
+    image: req.file.path,
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,

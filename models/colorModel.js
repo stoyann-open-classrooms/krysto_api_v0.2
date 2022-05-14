@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Association = sequelize.define("association", {
+  const Color = sequelize.define("color", {
     id: {
       type: DataTypes.INTEGER(10),
       primaryKey: true,
@@ -12,15 +12,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     description: {
-      type: DataTypes.INTEGER,
-    },
-    website: {
-      type: DataTypes.STRING,
-    },
-    facebook: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
   });
 
-  return Association;
+  return Color;
 };

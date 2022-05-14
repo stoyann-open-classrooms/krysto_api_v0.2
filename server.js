@@ -18,13 +18,15 @@ const userRouter = require("./routes/userRouter.js");
 app.use("/api/users", userRouter);
 const authRouter = require("./routes/authRouter.js");
 app.use("/api/auth", authRouter);
+const plasticTypeRouter = require("./routes/plasticTypesRouter");
+app.use("/api/plasticTypes", plasticTypeRouter);
 
 //static Images Folder
 
 app.use("/Images", express.static("./Images"));
 
 //port
-const port = 8000;
+const port = 8001;
 
 //server
 

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Association = sequelize.define("association", {
+  const Partenaire = sequelize.define("partenaire", {
     id: {
       type: DataTypes.INTEGER(10),
       primaryKey: true,
@@ -22,5 +22,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  return Association;
+  return Partenaire;
 };
