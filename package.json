@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
@@ -9,13 +10,12 @@
     "sequelize-cli": "^6.4.1"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon -r dotenv/config server.js"
   },
   "name": "api_krysto_v0_2",
   "description": "API REST avec NodeJS, utilisant la librairie Express et l'ORM Sequelize",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stoyann-open-classrooms/krysto_api_v0.2.git"
