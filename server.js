@@ -1,25 +1,31 @@
-//imports
 const express = require("express");
-const morgan = require("morgan");
+const cors = require("cors");
 
-//instantiate server
-const server = express();
+const app = express();
 
-server.use(express.json());
-server.use(morgan("tiny"));
-server.use(express.urlencoded({ extended: true }));
+// middleware
 
-//testing api
-server.get(process.env.BASE_URL, (req, res) =>
-  res.send(`🌏🌏 Im online ! 🌏🌏   well done 👍`)
-);
-server.get("*", (req, res) =>
-  res.status(501).send(`What the hell are you doing`)
-);
-// Launch server
+app.use(express.json());
 
-server.listen(process.env.SERVER_PORT, () => {
-  console.log(
-    `✅ This server running on port ${process.env.SERVER_PORT}. Have fun 👍👍`
-  );
+app.use(express.urlencoded({ extended: true }));
+
+// routers
+const productRouter = require("./routes/productRouter.js");
+app.use("/api/products", productRouter);
+const trocRouter = require("./routes/trocRouter.js");
+app.use("/api/trocs", trocRouter);
+const userRouter = require("./routes/userRouter.js");
+app.use("/api/users", userRouter);
+
+//static Images Folder
+
+app.use("/Images", express.static("./Images"));
+
+//port
+const port = 6000;
+
+//server
+
+app.listen(port, () => {
+  console.log(`server is running on port ${port}`);
 });

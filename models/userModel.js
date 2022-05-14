@@ -5,22 +5,16 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    nom: {
+    image: {
+      type: DataTypes.STRING,
+    },
+
+    username: {
       type: DataTypes.STRING(100),
       defaultVAlue: "",
       allowNul: false,
     },
-    prenom: {
-      type: DataTypes.STRING(100),
-      defaultVAlue: "",
-      allowNul: false,
-    },
-    pseudo: {
-      type: DataTypes.STRING(100),
-      defaultVAlue: "",
-      allowNul: false,
-      unique: true,
-    },
+
     email: {
       type: DataTypes.STRING(250),
       validate: {
