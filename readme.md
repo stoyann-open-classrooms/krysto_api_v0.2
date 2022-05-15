@@ -32,7 +32,7 @@
 
 ## Accéder à l'API :
 
-L'api est accessible sur le port 8000 en local, c'est à dire : http://localhost:8000
+L'api est accessible sur le port 8001 en local, c'est à dire : http://localhost:8001
 
 ## Documentation :
 
