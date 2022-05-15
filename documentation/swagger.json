@@ -54,7 +54,7 @@
     },
     "/products/published": {
       "get": {
-        "summary": "/products/published",
+        "summary": "retourne la liste des produits publiée",
         "responses": {},
         "tags": ["Products"]
       }
