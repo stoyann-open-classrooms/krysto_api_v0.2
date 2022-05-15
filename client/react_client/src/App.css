@@ -3,13 +3,20 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 35vmin;
+
   pointer-events: none;
+}
+.krysto_logo {
+  height: 100px;
+  margin-top: 10%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 15s linear;
+    margin-bottom: 100px;
+    margin-top: 70px;
   }
 }
 
