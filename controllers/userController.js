@@ -25,8 +25,7 @@ const addUser = async (req, res) => {
 
     // Création  de l'uttilisateur
     const user = User.create(info);
-    res.status(200).send(user);
-    console.log(info);
+    res.status(200).send(info);
   });
 };
 

@@ -35,8 +35,8 @@ const login = async (req, res) => {
               username: user.username,
               email: user.email,
             },
-            "phraseSecreteSuperDurATrouver",
-            { expiresIn: 1 }
+            process.env.JWT_SECRET,
+            { expiresIn: process.env.JWT_DURING }
           );
           return res.json({ access_token: token });
         })

@@ -1,0 +1,358 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": " API REST Krysto documentation",
+    "version": "1.0.0",
+    "license": {
+      "name": "Liscence :ISC"
+    },
+    "description": " # Ici la description détaillée de l'API in markdown "
+  },
+
+  "tag": [
+    {
+      "name": "Products"
+    },
+    {
+      "name": "Trocs"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Authentification"
+    }
+  ],
+
+  "servers": [
+    {
+      "url": "http://localhost:8001/krysto/api"
+    }
+  ],
+
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "summary": "retourne un jsonWebToken",
+        "responses": {},
+        "tags": ["Authentification"]
+      }
+    },
+    "products/addProduct": {
+      "post": {
+        "summary": "ajouter un produit dans la base de donées",
+        "responses": {},
+        "tags": ["Products"]
+      }
+    },
+    "/products/allProducts": {
+      "get": {
+        "summary": "Retourne la liste de tous les produits",
+        "responses": {},
+        "tags": ["Products"]
+      }
+    },
+    "/products/published": {
+      "get": {
+        "summary": "/products/published",
+        "responses": {},
+        "tags": ["Products"]
+      }
+    },
+    "/products/allReviews": {
+      "get": {
+        "summary": "/products/allReviews",
+        "responses": {},
+        "tags": ["Products"]
+      }
+    },
+    "/products/addReview/{id}": {
+      "post": {
+        "summary": "/products/addReview/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Products"]
+      }
+    },
+    "/products/getProductReviews/{id}": {
+      "get": {
+        "summary": "/products/getProductReviews/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Products"]
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "/products/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Products"]
+      },
+      "put": {
+        "summary": "/products/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Products"]
+      },
+      "delete": {
+        "summary": "/products/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Products"]
+      }
+    },
+    "/trocs/addTroc/": {
+      "post": {
+        "summary": "/trocs/addTroc/",
+        "responses": {},
+        "tags": ["Trocs"]
+      }
+    },
+    "/trocs/alltrocs": {
+      "get": {
+        "summary": "/trocs/alltrocs",
+        "responses": {},
+        "tags": ["Trocs"]
+      }
+    },
+    "/trocs/published": {
+      "get": {
+        "summary": "/trocs/published",
+        "responses": {},
+        "tags": ["Trocs"]
+      }
+    },
+    "/trocs/{id}": {
+      "get": {
+        "summary": "/trocs/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Trocs"]
+      },
+      "put": {
+        "summary": "/trocs/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Trocs"]
+      },
+      "delete": {
+        "summary": "/trocs/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Trocs"]
+      }
+    },
+    "/users/addUser": {
+      "post": {
+        "summary": "/users/addUser",
+        "responses": {},
+        "tags": ["Users"]
+      }
+    },
+    "/users/allusers": {
+      "get": {
+        "summary": "/users/allusers",
+        "responses": {},
+        "tags": ["Users"]
+      }
+    },
+    "/users/allUsers": {
+      "get": {
+        "summary": "/users/allUsers",
+        "responses": {},
+        "tags": ["Users"]
+      }
+    },
+    "/users/addTroc": {
+      "post": {
+        "summary": "/users/addTroc",
+        "responses": {},
+        "tags": ["Users"]
+      }
+    },
+    "/users/allTrocs": {
+      "get": {
+        "summary": "/users/allTrocs",
+        "responses": {},
+        "tags": ["Users"]
+      }
+    },
+    "/users/getUserTrocs/{id}": {
+      "get": {
+        "summary": "/users/getUserTrocs/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Users"]
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "/users/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Users"]
+      },
+      "put": {
+        "summary": "/users/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Users"]
+      },
+      "delete": {
+        "summary": "/users/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": ["Users"]
+      }
+    },
+
+    "/plasticTypes/addPlasticType": {
+      "post": {
+        "summary": "/plasticTypes/addPlasticType",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/plasticTypes/allPlasticTypes": {
+      "get": {
+        "summary": "/plasticTypes/allPlasticTypes",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/plasticTypes/allProducts": {
+      "get": {
+        "summary": "/plasticTypes/allProducts",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/plasticTypes/addProduct/{id}": {
+      "post": {
+        "summary": "/plasticTypes/addProduct/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    }
+  },
+  "tags": []
+}

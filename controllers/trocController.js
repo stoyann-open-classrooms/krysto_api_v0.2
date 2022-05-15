@@ -6,6 +6,7 @@ const path = require("path");
 
 // create main Model
 const Troc = db.trocs;
+const User = db.users;
 
 // main work
 
@@ -13,10 +14,9 @@ const Troc = db.trocs;
 
 const addTroc = async (req, res) => {
   const id = req.params.id;
-  console.log(id);
+
   let info = {
     image: req.file.path,
-    author_id: id,
     title: req.body.title,
     price: req.body.price,
     description: req.body.description,

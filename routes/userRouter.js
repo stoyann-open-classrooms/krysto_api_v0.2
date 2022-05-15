@@ -17,8 +17,8 @@ router.get("/allUsers", userController.getAllUsers);
 
 // Review Url and Controller
 
+router.post("/addTroc", trocController.addTroc);
 router.get("/allTrocs", trocController.getAllTrocs);
-router.post("/addTroc/:id", trocController.addTroc);
 
 // get product Reviews
 router.get("/getUserTrocs/:id", trocController.getUserTrocs);

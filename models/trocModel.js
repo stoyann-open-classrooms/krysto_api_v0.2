@@ -5,9 +5,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    author_id: {
-      type: DataTypes.INTEGER(10),
-    },
 
     title: {
       type: DataTypes.STRING(100),

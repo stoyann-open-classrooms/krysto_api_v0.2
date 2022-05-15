@@ -33,3 +33,8 @@
 ## Accéder à l'API :
 
 L'api est accessible sur le port 8000 en local, c'est à dire : http://localhost:8000
+
+## Documentation :
+
+Une fois le serveur lancer La documentation de l'API est disponible ici :
+http://localhost:8001/krysto/api/documentation/
