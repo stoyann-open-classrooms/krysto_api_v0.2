@@ -10,7 +10,7 @@ const login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(400).send("Bad email or password");
+    return res.status(400).send("  ⛔️ ⛔️ ⛔️ Bad email or password");
   }
   await User.findOne({
     where: { email: email },
@@ -25,7 +25,7 @@ const login = async (req, res) => {
         .compare(password, user.password)
         .then((test) => {
           if (!test) {
-            return res.status(401).send("wrong password");
+            return res.status(401).send(" ⛔️ ⛔️ ⛔️ wrong password");
           }
 
           // generation du web token
@@ -38,11 +38,16 @@ const login = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_DURING }
           );
-          return res.json({ access_token: token });
+          return res.json({
+            message: " ✅✅ l'uttilisateur est authentifié ✅✅ ",
+            access_token: token,
+          });
         })
-        .catch((err) => res.status(500).send("logging process failed"));
+        .catch((err) =>
+          res.status(500).send(" ⛔️ ⛔️ logging process failed")
+        );
     })
-    .catch((err) => res.status(500).send("database error"));
+    .catch((err) => res.status(500).send(" ⛔️ database error  ⛔️"));
 };
 
 module.exports = {

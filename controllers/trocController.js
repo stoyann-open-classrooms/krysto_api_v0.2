@@ -64,22 +64,6 @@ const deleteTroc = async (req, res) => {
 };
 // 7. connect one to many relation User and Troc
 
-const getUserTrocs = async (req, res) => {
-  const id = req.params.id;
-
-  const data = await Troc.findAll({
-    include: [
-      {
-        model: User,
-        as: "user",
-      },
-    ],
-    where: { author_id: id },
-  });
-
-  res.status(200).send(data);
-};
-
 // 6. get published product
 
 const getPublishedTrocs = async (req, res) => {
@@ -121,6 +105,5 @@ module.exports = {
   updateTroc,
   deleteTroc,
   getPublishedTrocs,
-  getUserTrocs,
   upload,
 };

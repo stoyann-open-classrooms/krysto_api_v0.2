@@ -3,10 +3,10 @@ const express = require("express");
 const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./documentation/swagger.json");
+
 const app = express();
-
 // middleware
-
+app.use(cors());
 app.use(
   `${process.env.BASE_URL}/documentation`,
   swaggerUi.serve,

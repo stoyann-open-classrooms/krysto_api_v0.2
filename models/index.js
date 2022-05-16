@@ -83,7 +83,19 @@ db.sequelize.sync({ force: false }).then(() => {
 });
 
 // ================ todo = mise en place des relations
-// 1 to Many Relation
+
+// ==============    one to one  relation between user et adresse
+
+db.users.hasOne(db.adresses, {
+  foreignKey: "user_id",
+  as: "adresse",
+});
+db.adresses.belongsTo(db.users, {
+  foreignKey: "user_id",
+  as: "user",
+});
+
+// =================== 1 to Many Relation between products & review
 
 db.products.hasMany(db.reviews, {
   foreignKey: "product_id",
@@ -93,6 +105,17 @@ db.products.hasMany(db.reviews, {
 db.reviews.belongsTo(db.products, {
   foreignKey: "product_id",
   as: "product",
+});
+
+// =================== 1 to Many Relation between user & troc
+
+db.users.hasMany(db.trocs, {
+  foreignKey: "user_id",
+  as: "troc",
+});
+db.trocs.belongsTo(db.users, {
+  foreignKey: "user_id",
+  as: "user",
 });
 
 module.exports = db;

@@ -5,8 +5,11 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER(10),
+    },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     zip_code: {
       type: DataTypes.INTEGER,

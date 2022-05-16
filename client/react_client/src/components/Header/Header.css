@@ -1,0 +1,13 @@
+.header {
+  padding: 2%;
+  position: relative;
+}
+.header__logo {
+  height: 55px;
+}
+
+.header__nav {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+}
